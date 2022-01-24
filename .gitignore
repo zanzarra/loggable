@@ -7,6 +7,9 @@ web/sites/*/settings.local.php
 web/sites/*/files
 web/sites/simpletest
 
+# Ignore OS specific files
+.DS_Store
+
 # Allow composer to build everything
 vendor
 web/core
