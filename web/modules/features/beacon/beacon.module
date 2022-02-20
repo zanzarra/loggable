@@ -16,6 +16,10 @@ use Drupal\Core\Database\Query\AlterableInterface;
  * Implements hook_cron().
  */
 function beacon_cron() {
+  //Load config file (settings of deleted events)
+  $config = \Drupal::config('beacon_ui.settings');
+  $quantity = $config->get('settingsServer.quantity');
+
   // Load event storage.
   $event_storage = \Drupal::entityTypeManager()
     ->getStorage('event');
@@ -26,7 +30,7 @@ function beacon_cron() {
     ->condition('expire', REQUEST_TIME, '<')
     ->addTag('access_bypass')
     // TODO: Constant or setting?
-    ->range(0, 100)
+    ->range(0, $quantity)
     ->execute();
 
   // Check for event IDs.
