@@ -50,4 +50,4 @@ beacon_ui.settings:
     _form: '\Drupal\beacon_ui\Form\SettingsForm'
     _title: 'Settings'
   requirements:
-    _role: 'authenticated'
+    _permission: 'auto-cleanup with settings'

@@ -42,9 +42,8 @@ class SettingsForm extends ConfigFormBase {
       '#description' => t('Older than.'),
       '#default_value' => $config->get('settingsServer.date_old'),
       //Added only quatity day (example: 1,2,10, 30,100...)
-      '#options' => array(7 => 'Older than one week', 14 => 'Older than two weeks', 30 => 'One month', 60 => 'Two month', ),
+      '#options' => array(7 => t('Older than one week'), 14 => t('Older than two weeks'), 30 => t('One month'), 60 => t('Two month'),),
       '#required' => TRUE,
-      '#weight' => '1',
     ];
     $form['delete_events']['quantity'] = [
       '#type' => 'textfield',
@@ -52,8 +51,6 @@ class SettingsForm extends ConfigFormBase {
       '#description' => t('In one go.'),
       '#default_value' => $config->get('settingsServer.quantity'),
       '#required' => TRUE,
-      '#attributes' => ['type' => 'number',],
-      '#weight' => '2',
     ];
     $form['actions'] = [
       'submit' => [
@@ -66,24 +63,29 @@ class SettingsForm extends ConfigFormBase {
     return $form;
   }
 
+
+  /**
+   * {@inheritdoc}
+   */
+  public function validateForm(array &$form, FormStateInterface $form_state) {
+    if(!is_numeric($form_state->getValue('quantity'))){
+      $form_state->setErrorByName(t('The field can only contain numbers.'));
+  
+    }
+    else if(empty($form_state->getValue('quantity'))) {
+      $form_state->setErrorByName(t('The field cannot be empty.'));
+    }
+  }
+
   /**
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    if(!is_numeric($form_state->getValue('quantity'))){
-      \Drupal::messenger()->adderror(t('The field can only contain numbers.'));
-  
-    }
-    else if(empty($form_state->getValue('quantity'))) {
-      \Drupal::messenger()->adderror(t('The field cannot be empty.'));
-    }
-    else {
-      $this->configFactory->getEditable('beacon_ui.settings')
-        ->set('settingsServer.date_old', $form_state->getValue('date_old'))
-        ->set('settingsServer.quantity', $form_state->getValue('quantity'))
-        ->save();
-      parent::submitForm($form, $form_state);
-    }
+    $this->configFactory->getEditable('beacon_ui.settings')
+      ->set('settingsServer.date_old', $form_state->getValue('date_old'))
+      ->set('settingsServer.quantity', $form_state->getValue('quantity'))
+      ->save();
+    //parent::submitForm($form, $form_state);
   }
 
 }
