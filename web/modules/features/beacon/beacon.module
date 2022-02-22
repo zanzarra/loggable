@@ -17,8 +17,8 @@ use Drupal\Core\Database\Query\AlterableInterface;
  */
 function beacon_cron() {
   //Load config file (settings of deleted events)
-  $config = \Drupal::config('beacon_ui.settings');
-  $quantity = $config->get('settingsServer.quantity');
+  $config = \Drupal::config('beacon.all_settings');
+  $quantity = $config->get('beaconCleanupSettings.quantity');
 
   // Load event storage.
   $event_storage = \Drupal::entityTypeManager()

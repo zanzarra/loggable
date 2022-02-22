@@ -43,11 +43,3 @@ beacon_ui.dashboard:
     _title: 'Dashboard'
   requirements:
     _role: 'authenticated'
-
-beacon_ui.settings:
-  path: '/admin/config/system/settings'
-  defaults:
-    _form: '\Drupal\beacon_ui\Form\SettingsForm'
-    _title: 'Settings'
-  requirements:
-    _permission: 'auto-cleanup with settings'

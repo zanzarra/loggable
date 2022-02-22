@@ -9,3 +9,6 @@ administer channel entities:
 administer event entities:
   title: 'Administer Event entities'
   restrict access: true
+
+administer beacon settings:
+  title: 'Administer beacon settings'

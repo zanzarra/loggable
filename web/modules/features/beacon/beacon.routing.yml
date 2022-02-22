@@ -1,0 +1,7 @@
+beacon.settings:
+  path: '/admin/config/system/settings'
+  defaults:
+    _form: '\Drupal\beacon\Form\SettingsForm'
+    _title: 'Settings'
+  requirements:
+    _permission: 'administer beacon settings'

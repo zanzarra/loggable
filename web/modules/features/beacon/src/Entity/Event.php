@@ -287,7 +287,7 @@ class Event extends BeaconContentEntityBase implements EventInterface {
    *   An array of default values.
    */
   public static function getDefaultExpireTimestamp() {
-    $count_day = \Drupal::config('beacon_ui.settings')->get('settingsServer.date_old');
+    $count_day = \Drupal::config('beacon.all_settings')->get('beaconCleanupSettings.date_old');
     return [strtotime('+'. $count_day .' day')];
   }
 

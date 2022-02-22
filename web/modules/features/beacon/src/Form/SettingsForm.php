@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\beacon_ui\Form;
+namespace Drupal\beacon\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -19,7 +19,7 @@ class SettingsForm extends ConfigFormBase {
    */
   protected function getEditableConfigNames() {
     return [
-      'beacon_ui.settings',
+      'beacon.all_settings',
     ];
   }
 
@@ -29,7 +29,7 @@ class SettingsForm extends ConfigFormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form = parent::buildForm($form, $form_state);
 
-    $config = $this->config('beacon_ui.settings');
+    $config = $this->config('beacon.all_settings');
     
     $form['delete_events'] = [
       '#type' => 'details',
@@ -40,7 +40,7 @@ class SettingsForm extends ConfigFormBase {
       '#type' => 'select',
       '#title' => t('Date'),
       '#description' => t('Older than.'),
-      '#default_value' => $config->get('settingsServer.date_old'),
+      '#default_value' => $config->get('beaconCleanupSettings.date_old'),
       //Added only quatity day (example: 1,2,10, 30,100...)
       '#options' => array(7 => t('Older than one week'), 14 => t('Older than two weeks'), 30 => t('One month'), 60 => t('Two month'),),
       '#required' => TRUE,
@@ -49,7 +49,7 @@ class SettingsForm extends ConfigFormBase {
       '#type' => 'textfield',
       '#title' => t('Quantity'),
       '#description' => t('In one go.'),
-      '#default_value' => $config->get('settingsServer.quantity'),
+      '#default_value' => $config->get('beaconCleanupSettings.quantity'),
       '#required' => TRUE,
     ];
     $form['actions'] = [
@@ -81,9 +81,9 @@ class SettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $this->configFactory->getEditable('beacon_ui.settings')
-      ->set('settingsServer.date_old', $form_state->getValue('date_old'))
-      ->set('settingsServer.quantity', $form_state->getValue('quantity'))
+    $this->configFactory->getEditable('beacon.all_settings')
+      ->set('beaconCleanupSettings.date_old', $form_state->getValue('date_old'))
+      ->set('beaconCleanupSettings.quantity', $form_state->getValue('quantity'))
       ->save();
   }
 

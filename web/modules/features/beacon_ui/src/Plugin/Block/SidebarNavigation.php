@@ -173,7 +173,7 @@ class SidebarNavigation extends BlockBase implements ContainerFactoryPluginInter
     // Add settings link.
     $items['settings'] = [
       'title' => t('Settings'),
-      'url' => Url::fromRoute('beacon_ui.settings'),
+      'url' => Url::fromRoute('beacon.settings'),
       'below' => [],
       'icon' => 'gear',
     ];
