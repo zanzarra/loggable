@@ -15,3 +15,11 @@ entity.alert.collection:
   route_name: entity.alert.collection
   description: 'List and manage alert entities.'
   parent: system.admin_structure
+
+#Create link in admin-configuration
+beacon.settings_beacon:
+  title: 'Administer Beacon'
+  description: 'Administer auto-cleanup and other beacon-related settings.'
+  route_name: 'beacon.settings'
+  parent: 'system.admin_config_system'
+  weight: 5

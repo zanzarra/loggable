@@ -170,6 +170,14 @@ class SidebarNavigation extends BlockBase implements ContainerFactoryPluginInter
       'icon' => 'question-circle',
     ];
 
+    // Add settings link.
+    $items['settings'] = [
+      'title' => t('Settings'),
+      'url' => Url::fromRoute('beacon.settings'),
+      'below' => [],
+      'icon' => 'gear',
+    ];
+
     // Check if this user is a site admin.
     if ($this->account->hasPermission('administer site configuration')) {
       // Add Drupal admin links.
