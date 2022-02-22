@@ -45,7 +45,7 @@ beacon_ui.dashboard:
     _role: 'authenticated'
 
 beacon_ui.settings:
-  path: '/settings'
+  path: '/admin/config/system/settings'
   defaults:
     _form: '\Drupal\beacon_ui\Form\SettingsForm'
     _title: 'Settings'

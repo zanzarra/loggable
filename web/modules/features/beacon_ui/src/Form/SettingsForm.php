@@ -85,7 +85,6 @@ class SettingsForm extends ConfigFormBase {
       ->set('settingsServer.date_old', $form_state->getValue('date_old'))
       ->set('settingsServer.quantity', $form_state->getValue('quantity'))
       ->save();
-    //parent::submitForm($form, $form_state);
   }
 
 }

@@ -1,0 +1,7 @@
+#Create link in admin-configuration
+beacon_ui.settings_beacon_ui:
+  title: 'Auto-cleanup Loggable DB'
+  description: 'Administer auto-cleanup'
+  route_name: 'beacon_ui.settings'
+  parent: 'system.admin_config_system'
+  weight: 4
