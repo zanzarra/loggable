@@ -1,0 +1,13 @@
+uuid: 82f7ac69-b998-4ece-b632-3ccc55e9d338
+langcode: en
+status: true
+dependencies:
+  module:
+    - beacon
+_core:
+  default_config_hash: KmLZyToaNhkuHrhOlEpPwYwklZ-mx826AVA6ytoTJik
+id: alert_disable
+label: 'Disable alert'
+type: alert
+plugin: alert_disable_action
+configuration: {  }

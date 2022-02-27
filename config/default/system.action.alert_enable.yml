@@ -1,0 +1,13 @@
+uuid: e8c0f90d-eb89-4ace-890a-8a47d4d138c4
+langcode: en
+status: true
+dependencies:
+  module:
+    - beacon
+_core:
+  default_config_hash: vufyYTJpMZftVlQRL4SptPviWvMwnLdVlNjMwt-gOGY
+id: alert_enable
+label: 'Enable alert'
+type: alert
+plugin: alert_enable_action
+configuration: {  }

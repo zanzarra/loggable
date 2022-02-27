@@ -1,0 +1,13 @@
+uuid: 963502ab-f741-45f3-a714-20a816a3fde0
+langcode: en
+status: true
+dependencies:
+  module:
+    - beacon
+_core:
+  default_config_hash: WW6iqDurM48nL3ad4RYdSK8fsJfWbJK3Gw7SC8FaoSc
+id: event_delete
+label: 'Delete event'
+type: event
+plugin: event_delete_action
+configuration: {  }

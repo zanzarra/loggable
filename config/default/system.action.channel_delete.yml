@@ -1,0 +1,13 @@
+uuid: 71a86553-d1b0-4046-9a6f-0c26287f7911
+langcode: en
+status: true
+dependencies:
+  module:
+    - beacon
+_core:
+  default_config_hash: ynaO-S8LoqQUBTd6mi-uuTMqSyIjF8jlAWHtpOZYWi8
+id: channel_delete
+label: 'Delete channel'
+type: channel
+plugin: channel_delete_action
+configuration: {  }

@@ -28,7 +28,8 @@
         "drupal/ctools": "^3.0",
         "drupal/views_custom_cache_tag": "^1.0",
         "drupal/redis": "^1.0@RC",
-        "drupal/loggable": "^1.0"
+        "drupal/loggable": "^1.0",
+        "predis/predis": "^1.1"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

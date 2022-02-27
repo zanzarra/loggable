@@ -1,0 +1,5 @@
+login_path: /user/login
+paths: "~stripe/*\r\n~api/*\r\n~user/password\r\n~user/register\r\n*"
+message: ''
+_core:
+  default_config_hash: btUYWZhZad9igLiBpHmRhVppB3q91bUM-LLo1n0OUFc
