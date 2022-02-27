@@ -1,0 +1,13 @@
+uuid: 47596549-9fe7-46c4-87a7-be2cdff30388
+langcode: en
+status: true
+dependencies:
+  module:
+    - beacon
+_core:
+  default_config_hash: GxKtWPmCmC9TkNWGwTbxvIcmC3A-WhCqBHDUBSGVRLc
+id: alert_delete
+label: 'Delete alert'
+type: alert
+plugin: alert_delete_action
+configuration: {  }

@@ -1,0 +1,12 @@
+uuid: a66195ae-1ecc-4881-9208-97af7127365e
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: AqKLlvh6Z3Q3pHAe6gyGy1q9DjpcBfxTFCx8aDepBIM
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'use key authentication'

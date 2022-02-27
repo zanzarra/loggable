@@ -1,0 +1,30 @@
+uuid: f9c1e1ec-d19a-4fe9-8587-67601312d1e9
+langcode: en
+status: true
+dependencies:
+  module:
+    - beacon_ui
+    - user
+  theme:
+    - valid
+_core:
+  default_config_hash: XsYEAjaMgtSQH6U00m3MsF-QY5R23OwYjzrmS1XY2w0
+id: currentuserinfo
+theme: valid
+region: sidebar
+weight: 0
+provider: null
+plugin: current_user_info
+settings:
+  id: current_user_info
+  label: 'Current user info'
+  provider: beacon_ui
+  label_display: '0'
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
